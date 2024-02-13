@@ -6,6 +6,9 @@
     let name = "Navid";
     let disabled = false;
 
+    // create a reactive variable that when name changes it will be updated
+    $: capitalizedName = name.toUpperCase();
+
     let fontSize = 30;
 
     let controlHold = false;
@@ -71,6 +74,8 @@
 <h1 style="font-size: {fontSize}px">Hello Again {name}!</h1>
 
 <input type="text" bind:value={name} />
+
+<span>{capitalizedName}</span>
 
 <button {disabled} on:click={clickMe}>Click Me</button>
 
