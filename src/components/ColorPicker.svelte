@@ -1,7 +1,7 @@
 <script lang="ts">
     import Slider from "./Slider.svelte";
 
-    let redColor = 100;
+    let redColor = 0;
     let greenColor = 0;
     let blueColor = 0;
 </script>

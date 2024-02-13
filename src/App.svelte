@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
     import ColorPicker from "./components/ColorPicker.svelte";
+    import Form from "./components/Form.svelte";
     import Funny from "./Funny.svelte";
     let customName = "James";
     let name = "Navid";
@@ -7,9 +8,61 @@
 
     let fontSize = 30;
 
+    let controlHold = false;
+
     setTimeout(() => {
         name = "Navid Dezashibi";
     }, 1000);
+
+    function clickMe(): void {
+        alert("clicked");
+    }
+
+    function onChange(e: Event) {
+        const target = e.target as HTMLInputElement; // Type assertion
+        alert(`changed to ${target.value}`);
+    }
+
+    function onKeyDown(e: KeyboardEvent) {
+        console.log(e.key, e, "keydown");
+
+        if (e.key == "Control") {
+            controlHold = true;
+        }
+
+        if (controlHold) {
+            switch (e.key) {
+                case "v":
+                    alert("pasted!");
+                    break;
+
+                case "c":
+                    alert("copied!");
+                    break;
+
+                case "x":
+                    alert("cut!");
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    }
+
+    function onKeyUp(e: KeyboardEvent) {
+        console.log(e.key, e, "keyup");
+
+        if (e.key == "Control") {
+            controlHold = false;
+        }
+    }
+
+    function onFormSubmit(e: CustomEvent) {
+        const { name, age } = e.detail;
+
+        alert(`${name} is ${age} years old!`);
+    }
 </script>
 
 <Funny {name} wait={4000} />
@@ -19,14 +72,26 @@
 
 <input type="text" bind:value={name} />
 
-<button {disabled}>Click Me</button>
+<button {disabled} on:click={clickMe}>Click Me</button>
 
-<input type="range" bind:value={fontSize} min="10" max="50" />
+<input
+    type="range"
+    bind:value={fontSize}
+    min="10"
+    max="50"
+    on:change={onChange}
+/>
 <span>{fontSize}</span>
+
+<svelte:window on:keydown={onKeyDown} on:keyup={onKeyUp} />
 
 <hr />
 
 <ColorPicker />
+
+<hr />
+
+<Form on:form-submit={onFormSubmit} />
 
 <style>
     h1 {
