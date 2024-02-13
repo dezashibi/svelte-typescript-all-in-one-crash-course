@@ -66,6 +66,12 @@
 
         alert(`${name} is ${age} years old!`);
     }
+
+    let colorList = ["red", "green", "blue", "purple"];
+
+    setTimeout(() => {
+        colorList = ["Yellow", ...colorList];
+    }, 2000);
 </script>
 
 <Funny {name} wait={4000} />
@@ -97,6 +103,18 @@
 <hr />
 
 <Form on:form-submit={onFormSubmit} />
+
+<hr />
+
+<ul>
+    {#each colorList as color}
+        {#if color == "green"}
+            <li>{color} - My favorite 👍</li>
+        {:else}
+            <li>{color}</li>
+        {/if}
+    {/each}
+</ul>
 
 <style>
     h1 {
