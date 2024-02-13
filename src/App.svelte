@@ -107,11 +107,11 @@
 <hr />
 
 <ul>
-    {#each colorList as color}
+    {#each colorList as color, index}
         {#if color == "green"}
-            <li>{color} - My favorite 👍</li>
+            <li>{index + 1} - {color} 👍</li>
         {:else}
-            <li>{color}</li>
+            <li>{index + 1} - {color}</li>
         {/if}
     {/each}
 </ul>
