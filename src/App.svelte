@@ -5,6 +5,9 @@
     import Quote from "./components/Quote.svelte";
     import GeoLocation from "./components/GeoLocation.svelte";
     import Funny from "./Funny.svelte";
+    import Counter from "./components/Counter.svelte";
+    import countStore from "./stores/Count.Store";
+
     let customName = "James";
     let name = "Navid";
     let disabled = false;
@@ -131,6 +134,11 @@
     <LifeCycle />
     <GeoLocation />
 {/if}
+
+<hr />
+<Counter />
+
+<h3>{$countStore}</h3>
 
 <style>
     h1 {
