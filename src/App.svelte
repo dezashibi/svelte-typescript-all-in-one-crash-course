@@ -1,6 +1,7 @@
 <script lang="ts">
     import ColorPicker from "./components/ColorPicker.svelte";
     import Form from "./components/Form.svelte";
+    import LifeCycle from "./components/LifeCycle.svelte";
     import Quote from "./components/Quote.svelte";
     import Funny from "./Funny.svelte";
     let customName = "James";
@@ -73,6 +74,8 @@
     setTimeout(() => {
         colorList = ["Yellow", ...colorList];
     }, 2000);
+
+    let show = false;
 </script>
 
 <Funny {name} wait={4000} />
@@ -120,6 +123,12 @@
 <hr />
 
 <Quote />
+
+<hr />
+<input type="checkbox" bind:checked={show} />
+{#if show}
+    <LifeCycle />
+{/if}
 
 <style>
     h1 {
