@@ -3,6 +3,7 @@
     import Form from "./components/Form.svelte";
     import LifeCycle from "./components/LifeCycle.svelte";
     import Quote from "./components/Quote.svelte";
+    import GeoLocation from "./components/GeoLocation.svelte";
     import Funny from "./Funny.svelte";
     let customName = "James";
     let name = "Navid";
@@ -128,6 +129,7 @@
 <input type="checkbox" bind:checked={show} />
 {#if show}
     <LifeCycle />
+    <GeoLocation />
 {/if}
 
 <style>
