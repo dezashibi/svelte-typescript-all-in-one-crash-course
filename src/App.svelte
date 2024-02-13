@@ -1,4 +1,5 @@
 <script>
+    import ColorPicker from "./components/ColorPicker.svelte";
     import Funny from "./Funny.svelte";
     let customName = "James";
     let name = "Navid";
@@ -22,6 +23,10 @@
 
 <input type="range" bind:value={fontSize} min="10" max="50" />
 <span>{fontSize}</span>
+
+<hr />
+
+<ColorPicker />
 
 <style>
     h1 {
