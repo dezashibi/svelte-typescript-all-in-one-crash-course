@@ -1,6 +1,7 @@
 <script lang="ts">
     import ColorPicker from "./components/ColorPicker.svelte";
     import Form from "./components/Form.svelte";
+    import Quote from "./components/Quote.svelte";
     import Funny from "./Funny.svelte";
     let customName = "James";
     let name = "Navid";
@@ -115,6 +116,10 @@
         {/if}
     {/each}
 </ul>
+
+<hr />
+
+<Quote />
 
 <style>
     h1 {
