@@ -7,6 +7,8 @@
     import Funny from "./Funny.svelte";
     import Counter from "./components/Counter.svelte";
     import countStore from "./stores/Count.Store";
+    import CounterCustom from "./components/CounterCustom.svelte";
+    import countCustomStore from "./stores/Custom.Store";
 
     let customName = "James";
     let name = "Navid";
@@ -139,6 +141,10 @@
 <Counter />
 
 <h3>{$countStore}</h3>
+
+<CounterCustom />
+
+<h3>{$countCustomStore}</h3>
 
 <style>
     h1 {
