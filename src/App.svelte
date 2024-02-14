@@ -12,6 +12,7 @@
     import Action from "./components/Action.svelte";
     import Draggable from "./components/Draggable.svelte";
     import CustomEventExample from "./components/CustomEventExample.svelte";
+    import tippyAction from "./libs/actions/tippyAction";
 
     let customName = "James";
     let name = "Navid";
@@ -167,6 +168,8 @@
 <br />
 
 <CustomEventExample />
+
+<button use:tippyAction={{ content: "from outside" }}>In the main app</button>
 
 <style>
     h1 {
