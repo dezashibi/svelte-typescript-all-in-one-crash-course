@@ -11,6 +11,7 @@
     import countCustomStore from "./stores/Custom.Store";
     import Action from "./components/Action.svelte";
     import Draggable from "./components/Draggable.svelte";
+    import CustomEventExample from "./components/CustomEventExample.svelte";
 
     let customName = "James";
     let name = "Navid";
@@ -160,6 +161,12 @@
 <Draggable left={800} top={100}>
     <h1>Drag Me!</h1>
 </Draggable>
+
+<hr />
+<br />
+<br />
+
+<CustomEventExample />
 
 <style>
     h1 {
