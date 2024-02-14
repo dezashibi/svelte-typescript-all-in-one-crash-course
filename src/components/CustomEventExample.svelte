@@ -34,8 +34,10 @@
         use:longpress={{ durations }}
         on:longpress={() => {
             alert("pressed");
-        }}>Hello</button
+        }}
     >
+        Hello
+    </button>
 
     <button bind:this={button}>Another button</button>
 
