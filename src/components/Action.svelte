@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Box from "./Box.svelte";
+
     let show = false;
 
     interface ExampleActionParams {
@@ -36,6 +38,14 @@
 {#if show}
     <div use:exampleAction={{ color: "red", name: "box" }} />
 {/if}
+
+<Box>
+    <h1 slot="top">Top</h1>
+    <div slot="bottom">
+        <h1>Bottom</h1>
+        <p>Some text in bottom slot</p>
+    </div>
+</Box>
 
 <style>
     div {
