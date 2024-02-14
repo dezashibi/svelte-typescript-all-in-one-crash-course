@@ -10,6 +10,7 @@
     import CounterCustom from "./components/CounterCustom.svelte";
     import countCustomStore from "./stores/Custom.Store";
     import Action from "./components/Action.svelte";
+    import Draggable from "./components/Draggable.svelte";
 
     let customName = "James";
     let name = "Navid";
@@ -150,6 +151,15 @@
 <hr />
 
 <Action />
+
+<hr />
+<br />
+<br />
+<br />
+
+<Draggable left={800} top={100}>
+    <h1>Drag Me!</h1>
+</Draggable>
 
 <style>
     h1 {
