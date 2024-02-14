@@ -9,6 +9,7 @@
     import countStore from "./stores/Count.Store";
     import CounterCustom from "./components/CounterCustom.svelte";
     import countCustomStore from "./stores/Custom.Store";
+    import Action from "./components/Action.svelte";
 
     let customName = "James";
     let name = "Navid";
@@ -145,6 +146,10 @@
 <CounterCustom />
 
 <h3>{$countCustomStore}</h3>
+
+<hr />
+
+<Action />
 
 <style>
     h1 {
