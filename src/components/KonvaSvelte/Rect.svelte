@@ -15,7 +15,7 @@
 
     // anyhow $$props is not a good idea
 
-    const rect = new Konva.Rect($$props);
+    export const rect = new Konva.Rect($$props);
 
     const dispatch = createEventDispatcher();
     rect.on("mousedown click", (e) => {
