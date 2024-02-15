@@ -14,6 +14,7 @@
     import CustomEventExample from "./components/CustomEventExample.svelte";
     import tippyAction from "./libs/actions/tippyAction";
     import MainForm from "./components/ContextExample/MainForm.svelte";
+    import KonvaExample from "./components/KonvaSvelte/KonvaExample.svelte";
 
     let customName = "James";
     let name = "Navid";
@@ -176,6 +177,11 @@
 <br />
 
 <MainForm />
+
+<hr />
+<br />
+
+<KonvaExample />
 
 <style>
     h1 {
