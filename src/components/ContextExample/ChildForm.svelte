@@ -19,6 +19,10 @@
     } as FormContext);
 
     setContext(formKey, formStore);
+
+    $: hasError =
+        Object.keys($formStore.errors).filter((x) => $formStore.errors[x])
+            .length != 0;
 </script>
 
 <pre>
@@ -26,9 +30,6 @@
 </pre>
 <form
     on:submit|preventDefault={() => {
-        const hasError =
-            Object.keys($formStore.errors).filter((x) => $formStore.errors[x])
-                .length != 0;
         if (!hasError) {
             dispatch("submit", $formStore.values);
         } else {
@@ -36,5 +37,5 @@
         }
     }}
 >
-    <slot />
+    <slot hasErrors={hasError} />
 </form>

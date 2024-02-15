@@ -19,6 +19,7 @@
         password: "",
         password2: "",
     }}
+    let:hasErrors
 >
     <FormField
         label="Username"
@@ -50,5 +51,5 @@
         validate={validateRequiredField}
     />
 
-    <button type="submit">Submit</button>
+    <button type="submit" disabled={hasErrors}>Submit</button>
 </ChildForm>
