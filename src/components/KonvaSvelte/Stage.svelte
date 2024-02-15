@@ -4,12 +4,14 @@
     import { stageKey } from ".";
     import type { Stage as KonvaStage } from "konva/lib/Stage";
 
-    export let width: number;
-    export let height: number;
+    // export let width: number;
+    // export let height: number;
 
     let container: HTMLDivElement;
 
     let stage: KonvaStage;
+
+    $: if (stage) stage.setAttrs($$props);
 
     setContext(stageKey, {
         getStage: (): KonvaStage => stage,
@@ -18,8 +20,7 @@
     onMount(() => {
         stage = new Konva.Stage({
             container,
-            width,
-            height,
+            ...$$props,
         });
     });
 

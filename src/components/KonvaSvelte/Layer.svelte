@@ -4,15 +4,15 @@
     import { layerKey, stageKey } from ".";
     import type { Stage as KonvaStage } from "konva/lib/Stage";
 
-    export let draggable: boolean = undefined;
+    // export let draggable: boolean = undefined;
 
     const { getStage } = getContext(stageKey);
 
     const stage = getStage() as KonvaStage;
 
-    const layer = new Konva.Layer({
-        draggable,
-    });
+    const layer = new Konva.Layer($$props);
+
+    $: layer.setAttrs($$props);
 
     onDestroy(() => {
         layer.destroy();
