@@ -12,14 +12,13 @@
 
     // export let draggable: boolean = undefined;
 
-    const dispatch = createEventDispatcher();
-
     const { getStage } = getContext(stageKey);
 
     const stage = getStage() as KonvaStage;
 
     const layer = new Konva.Layer($$props);
 
+    const dispatch = createEventDispatcher();
     layer.on("dragmove click", (e) => {
         dispatch(e.type, e);
     });

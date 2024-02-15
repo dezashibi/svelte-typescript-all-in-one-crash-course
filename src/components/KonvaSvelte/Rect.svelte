@@ -1,6 +1,6 @@
 <script lang="ts">
     import Konva from "konva";
-    import { getContext, onDestroy } from "svelte";
+    import { createEventDispatcher, getContext, onDestroy } from "svelte";
     import { layerKey } from ".";
 
     // export let x: number = undefined;
@@ -16,6 +16,11 @@
     // anyhow $$props is not a good idea
 
     const rect = new Konva.Rect($$props);
+
+    const dispatch = createEventDispatcher();
+    rect.on("mousedown click", (e) => {
+        dispatch(e.type, e);
+    });
 
     layer.add(rect);
 
