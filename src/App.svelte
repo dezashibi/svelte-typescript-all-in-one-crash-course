@@ -15,6 +15,7 @@
     import tippyAction from "./libs/actions/tippyAction";
     import MainForm from "./components/ContextExample/MainForm.svelte";
     import KonvaExample from "./components/KonvaSvelte/KonvaExample.svelte";
+    import MCExample from "./components/ModuleContextExample/MCExample.svelte";
 
     let customName = "James";
     let name = "Navid";
@@ -182,6 +183,11 @@
 <br />
 
 <KonvaExample />
+
+<hr />
+<br />
+
+<MCExample />
 
 <style>
     h1 {
